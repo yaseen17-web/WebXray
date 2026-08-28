@@ -1,75 +1,61 @@
-# React + TypeScript + Vite
+# WebXray
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Browser extension for pentesters** — detect web technologies, extract versions, surface related CVEs, and jump to exploit / advisory sources.
 
-Currently, two official plugins are available:
+Like Wappalyzer, but focused on security testing.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+![Chrome](https://img.shields.io/badge/Chrome-Extension-blue?logo=googlechrome)
+![Manifest V3](https://img.shields.io/badge/Manifest-V3-green)
+![TypeScript](https://img.shields.io/badge/TypeScript-5-blue?logo=typescript)
+![React](https://img.shields.io/badge/React-19-61dafb?logo=react)
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Features
 
-## Expanding the ESLint configuration
+- **Technology fingerprinting** — detects CMS, frameworks, libraries, servers, CDNs, and more
+- **Version extraction** — pulls versions where possible (WordPress, jQuery, Nginx, Apache, PHP, Next.js, etc.)
+- **CVE lookup** — fetches related vulnerabilities from [dbcve.org](https://dbcve.org) (no API key required)
+- **Exploit search links** — one-click search on:
+  - Exploit-DB
+  - Rapid7
+  - NVD
+  - CVE Details
+  - Packet Storm
+  - GitHub (PoCs / exploits)
+- **Clean dark UI** — risk indicators, severity badges, expandable details
+- **Manifest V3** — modern Chrome / Edge extension
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Install (Load Unpacked)
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+1. Download or clone this repository
+2. Build the extension (see below) **or** use a pre-built `dist` if available
+3. Open Chrome / Edge and go to `chrome://extensions`
+4. Enable **Developer mode**
+5. Click **Load unpacked**
+6. Select the `dist` folder
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+Pin the extension and open any website to scan.
 
-```
+---
 
-You can also install [eslint-plugin-react-x](https://npmx.dev/package/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://npmx.dev/package/eslint-plugin-react-dom) for React-specific lint rules:
+## Build from Source
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### Requirements
+- Node.js 20+
+- npm
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### Steps
 
-```
+```bash
+# Clone
+git clone https://github.com/yaseen17-web/WebXray.git
+cd WebXray
+
+# Install dependencies
+npm install
+
+# Build
+npm run build
