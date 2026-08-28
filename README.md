@@ -2,7 +2,7 @@
 
 **Browser extension for pentesters** — detect web technologies, extract versions, surface related CVEs, and jump to exploit / advisory sources.
 
-Like Wappalyzer, but focused on security testing.
+Focused on security testing.
 
 ![Chrome](https://img.shields.io/badge/Chrome-Extension-blue?logo=googlechrome)
 ![Manifest V3](https://img.shields.io/badge/Manifest-V3-green)
