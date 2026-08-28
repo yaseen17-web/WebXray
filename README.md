@@ -4,58 +4,38 @@
 
 Focused on security testing.
 
-![Chrome](https://img.shields.io/badge/Chrome-Extension-blue?logo=googlechrome)
-![Manifest V3](https://img.shields.io/badge/Manifest-V3-green)
-![TypeScript](https://img.shields.io/badge/TypeScript-5-blue?logo=typescript)
-![React](https://img.shields.io/badge/React-19-61dafb?logo=react)
+---
+
+## Easy Install (No Build Required)
+
+1. Go to the latest release:  
+   **[Download WebXray v1.0.0](https://github.com/yaseen17-web/WebXray/releases/tag/v1.0.0)**
+2. Download **`WebXray-v1.0.0.zip`**
+3. Extract the zip to any folder
+4. Open Chrome → `chrome://extensions`
+5. Enable **Developer mode** (top right)
+6. Click **Load unpacked**
+7. Select the extracted folder
+
+Done. No Node.js or build step needed.
 
 ---
 
 ## Features
 
-- **Technology fingerprinting** — detects CMS, frameworks, libraries, servers, CDNs, and more
-- **Version extraction** — pulls versions where possible (WordPress, jQuery, Nginx, Apache, PHP, Next.js, etc.)
-- **CVE lookup** — fetches related vulnerabilities from [dbcve.org](https://dbcve.org) (no API key required)
-- **Exploit search links** — one-click search on:
-  - Exploit-DB
-  - Rapid7
-  - NVD
-  - CVE Details
-  - Packet Storm
-  - GitHub (PoCs / exploits)
-- **Clean dark UI** — risk indicators, severity badges, expandable details
-- **Manifest V3** — modern Chrome / Edge extension
+- **Technology fingerprinting** — CMS, frameworks, libraries, servers, CDNs, and more
+- **Version extraction** — WordPress, jQuery, Nginx, Apache, PHP, Next.js, etc.
+- **CVE lookup** — related vulnerabilities via [dbcve.org](https://dbcve.org)
+- **Exploit search links** — Exploit-DB, Rapid7, NVD, CVE Details, Packet Storm, GitHub PoCs
+- **Clean dark UI** — risk indicators and severity badges
+- **Manifest V3** — works on Chrome and Edge
 
 ---
 
-## Install (Load Unpacked)
-
-1. Download or clone this repository
-2. Build the extension (see below) **or** use a pre-built `dist` if available
-3. Open Chrome / Edge and go to `chrome://extensions`
-4. Enable **Developer mode**
-5. Click **Load unpacked**
-6. Select the `dist` folder
-
-Pin the extension and open any website to scan.
-
----
-
-## Build from Source
-
-### Requirements
-- Node.js 20+
-- npm
-
-### Steps
+## Build from Source (Optional)
 
 ```bash
-# Clone
 git clone https://github.com/yaseen17-web/WebXray.git
 cd WebXray
-
-# Install dependencies
 npm install
-
-# Build
 npm run build
